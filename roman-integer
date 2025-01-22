@@ -1,0 +1,20 @@
+class Solution:
+    def romanToInt(self, s: str) -> int:
+        values_dict= {"I": 1, "V":5, "X": 10, "L": 50, "C": 100, "D":500, "M":1000}
+        converted=0
+        old_value=0
+        for i in s:
+            current_value= values_dict[i]
+            if current_value>old_value:
+                converted+= current_value-2*old_value
+            else:
+                converted+=current_value
+            old_value=current_value
+
+        return converted      
+                
+                
+
+
+            
+            
